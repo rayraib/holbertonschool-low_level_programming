@@ -22,7 +22,7 @@ int main(void)
 	}
 	else if (l == 0)
 	{
-		printf(" and is o\n");
+		printf(" and is 0\n");
 	}
 	else if (l < 6 && l != 0)
 	{
