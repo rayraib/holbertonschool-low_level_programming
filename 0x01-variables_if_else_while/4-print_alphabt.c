@@ -2,7 +2,7 @@
 /**
 * main - Entry point
 * Prints a-z except 'q' and 'e'
-* Return - 0(succes)
+* Return: Always 0 (succes)
 */
 int main(void)
 {
