@@ -13,7 +13,7 @@ int main(void)
 	first = 1;
 	second = 2;
 	printf("1, 2");
-	for (i = 0; i <= 46; i++)
+	for (i = 0; i <= 47; i++)
 	{
 		sum = first + second;
 		first = second;
@@ -21,4 +21,5 @@ int main(void)
 		printf(", %ld", sum);
 	}
 	printf("\n");
+	return (0);
 }
