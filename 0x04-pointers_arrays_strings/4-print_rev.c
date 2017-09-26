@@ -5,20 +5,34 @@
 */
 void print_rev(char *s)
 {
-	int counter, i;
+	int str_len;
 
-	counter = 0;
-	i = 0;
-	while (*(s + i) != '\0')
+	str_len = _strlen(s);
+	str_len = str_len - 1;
+	while (*(s + str_len) >= 0)
 	{
-		counter++;
-		i++;
-	}
-	counter = counter - 1;
-	while (*(s + counter) >= 0)
-	{
-		_putchar(*(s + counter));
-		counter--;
+		_putchar(*(s + str_len));
+		str_len--;
 	}
 	_putchar('\n');
+
+}
+/**
+* _strlen - Returns the length of a string.
+* @s: Pointer to a string at address s
+* Return: The length of a string (var len)
+*/
+int _strlen(char *s)
+{
+	char i, len; /* to hold value of the length */
+
+	len = 0;
+	i = 0;
+	while (*(s + i) != '\0') /* when value at pointed address is '\0' */
+				/* a null value, the statement is untrue and */
+	{
+		len++;
+		i++;
+	}
+	return (len);
 }
