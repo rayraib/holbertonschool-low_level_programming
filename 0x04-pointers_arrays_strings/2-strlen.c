@@ -6,15 +6,9 @@
 */
 int _strlen(char *s)
 {
-	char i, len; /* to hold value of the length */
+	int i; /* to hold value of the length */
 
-	len = 0;
-	i = 0;
-	while (*(s + i) != '\0') /* when value at pointed address is '\0' */
-				/* a null value, the statement is untrue and */
-	{
-		i++;
-		len++;
-	}
-	return (len);
+	for (i = 0; s[i] != 0; i++)  /* when value at pointed address is '\0' */
+		;
+	return (i);
 }
