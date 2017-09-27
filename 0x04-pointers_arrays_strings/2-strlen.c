@@ -13,8 +13,8 @@ int _strlen(char *s)
 	while (*(s + i) != '\0') /* when value at pointed address is '\0' */
 				/* a null value, the statement is untrue and */
 	{
-		len++;
 		i++;
+		len++;
 	}
 	return (len);
 }
