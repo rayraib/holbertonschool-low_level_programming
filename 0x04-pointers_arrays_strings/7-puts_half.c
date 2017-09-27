@@ -5,21 +5,12 @@
 */
 void puts_half(char *str)
 {
-	int j, i, len;
+	int i, len;
 
-	len = 0;
-	i = 0;
-	while (*(str + i) != '\0') /* when value at pointed address is '\0' */
-				/* a null value, the statement is untrue and */
+	len = _strlen(str);
+	for (i = len - (len / 2); i < len; i++)
 	{
-		i++;
-		len++;
-	}
-	j = (len) / 2;
-	while (str[j] != '\0')
-	{
-		_putchar(str[j]);
-		j++;
+		_putchar(str[i]);
 	}
 	_putchar('\n');
 }
