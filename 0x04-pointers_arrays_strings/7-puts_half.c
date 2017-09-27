@@ -12,8 +12,8 @@ void puts_half(char *str)
 	while (*(str + i) != '\0') /* when value at pointed address is '\0' */
 				/* a null value, the statement is untrue and */
 	{
-		len++;
 		i++;
+		len++;
 	}
 	j = (len) / 2;
 	while (str[j] != '\0')
