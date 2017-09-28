@@ -14,7 +14,7 @@ char *string_toupper(char *s)
 		;
 	for (i = 0; i < len; i++)
 	{
-		if (a[i] > 97 && a[i] < 122)
+		if (a[i] >= 97 && a[i] <= 122)
 			a[i] = a[i] - 32;
 	}
 	return (s);
