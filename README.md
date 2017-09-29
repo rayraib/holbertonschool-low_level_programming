@@ -13,3 +13,8 @@ This project is to learn more about nested while loops in C, funtions, header fi
 
 ## 0x03-more_funtions_nested_loops
 This project, in continuation of 0x02, is to learn further more about nested while loops in C, funtions, header files and function prototypes and their usage.
+## 0x04-pointers_arrays_strings
+This project is to learn about Arrays and pointers in C.
+
+## 0x05-pointers_arrays_strings
+This project is continuation of 0x05 to continue practising and learning about more pointers and arrays.
