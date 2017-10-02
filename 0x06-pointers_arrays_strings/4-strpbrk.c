@@ -28,5 +28,5 @@ char *_strpbrk(char *s, char *accept)
 	}
 	if (j == len)
 		return (NULL);
-	return (p);
+	return (p + 1);
 }
