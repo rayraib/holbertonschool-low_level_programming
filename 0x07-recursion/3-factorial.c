@@ -4,7 +4,7 @@
 * @n: The number whose factorial is to be found
 * Return: if n < 0 return -1; else, return the factorial value
 */
-unsigned int factorial(int n)
+int factorial(int n)
 {
 	if (n < 0)
 		return (-1);
