@@ -2,7 +2,6 @@
 void print(char *s);
 /**
 * _print_rev_recursion - Prints a string in reverse
-* print - Print the string in from null value to beginning
 * @s: Pointer to a memory where the string is stored
 */
 void _print_rev_recursion(char *s)
@@ -14,6 +13,10 @@ void _print_rev_recursion(char *s)
 		print(s);
 	_print_rev_recursion(s);
 }
+/**
+* print - Prints the string
+* @s: Pointer to a memory location where the string is stored
+*/
 void print(char *s)
 {
 	s--;

@@ -16,13 +16,13 @@ int _strlen_recursion(char *s)
 	return (l);
 }
 
-int len(char *s, int count)
 /**
 * len - Count the lentgh of a string
 * @s: Pointer to memory location of string to be counted
 * @count: length of string
 * Return: length of string
 */
+int len(char *s, int count)
 {
 	count++;
 	s++;
