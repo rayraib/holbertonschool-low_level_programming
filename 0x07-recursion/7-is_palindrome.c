@@ -1,42 +1,48 @@
 #include "holberton.h"
-int compare(char *s, char *temp);
-int move(char *temps);
+int check(char *s, char *end);
+int find_end(char *end);
 /**
 * is_palindrome - Checks if a string is a palindrome
 * @s: Pointer to a memory location where the string is stored
-* Return: 1 if string is palindrome, else 0 
+* Return: 1 if string is palindrome, else 0
 */
 int is_palindrome(char *s)
 {
-	char *temp;
-	char *t;
+	char *end;
 
-	temp = s;
-	if (*temp == '\0')
-		return(1);	
-	temp = move(temp);
-	return (compare(s, t));
+	end = s;
+	if (*s == '\0')
+		return (1);
+	return (check(s, s + (find_end(end) - 1)));
 }
-
-
-int compare(char *s, char *temp)
+/**
+* check - checks if is a plaidnrome
+* @s: Pointer to a memory location of string
+* @end: Pointer to memory location to the end of the string
+* Return: Address of the end of the string, end
+*/
+int check(char *s, char *end)
 {
-	if (*s == *temp)
+	if (s == end || s > end)
+		return (1);
+	if (*s == *end)
 	{
 		s++;
-		temp++;
-		if (s == temp)
-			return(1);
-		return (compare(s, temp));
+		end--;
+		return (check(s, end));
 	}
 	else
 		return (0);
 }
-int move(char *temp)
+/**
+* find_end - Find the address of the end of the string
+* @end: Pointer to the end of the string
+* Return: 1 if is a palindrome, 0 if not
+*/
+int find_end(char *end)
 {
-	temp++;
-	if (*temp == '\0')
-		return(temp);
-	return(move(temp));
-		
+	if (*end != '\0')
+		return (1 + find_end(end + 1));
+	return (0);
+
 }
