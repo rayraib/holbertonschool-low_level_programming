@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (argv[i][0] >= 48 && argv[i][0] <= 57)
+			if (isdigit(argv[i][0]))
 			{
 				sum = sum + atoi(argv[i]);
 				digit++;
