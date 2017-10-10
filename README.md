@@ -1,5 +1,4 @@
-# holbertonschool-low_level_programming
-
+# holbertonschool-low_level_programming 
 This repository contains Holberton School's projects on C language: variables, functions, nested loops.
 
 ## 0x00-hello_word
@@ -18,3 +17,11 @@ This project is to learn about Arrays and pointers in C.
 
 ## 0x05-pointers_arrays_strings
 This project is continuation of 0x05 to continue practising and learning about more pointers and arrays.
+## 0x06-pointers_arrays_strings
+This project is to continue practicing further about arrays and functions
+## 0x07-recursion
+This project is to learn about what recursion is and when and how to use it.
+## 0x08-static_libraries
+This project is to learn about libraries, how to create
+## 0x09-argc_argv
+This project is to learn about 'argc' and 'argv', what they are and how to use them.
