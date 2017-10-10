@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		{
 			if (isdigit(argv[i][0]))
 			{
-				sum = sum + atoi(argv[i]);
+				sum = sum + atoi(argv[i][0]);
 				digit++;
 			}
 		}
