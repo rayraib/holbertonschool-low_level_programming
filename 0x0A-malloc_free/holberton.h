@@ -8,4 +8,3 @@ int **alloc_grid(int width, int height);
 void free_grid(int **grid, int height);
 char *argstostr(int ac, char **av);
 #endif /* _HOLBERTON_H_ */
-#define NULL ((char *)0)
