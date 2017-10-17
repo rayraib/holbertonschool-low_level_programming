@@ -1,7 +1,8 @@
 #include "dog.h"
 #include <stdlib.h>
+#include <stdio.h>
 int _strlen(char *s);
-int* _strcpy(char *s);
+char *_strcpy(char *s);
 /**
 * new_dog - Creates a new dog from a dog_t struct
 * @name: Pointer to memory location where the dog name string is stored
@@ -13,21 +14,22 @@ int* _strcpy(char *s);
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *ptr;
-	char *p, *n;
+	char *p;
+	char *n;
 
 	ptr = malloc(sizeof(dog_t));
 	if (ptr == NULL)
-		return (NULL); 
-	n = int* (_strcpy(name));
+		return (NULL);
+	n = _strcpy(name);
 	if (n == NULL)
 		return (NULL);
-	p = int* (_strcpy(owner));
+	p = _strcpy(owner);
+	if (p == NULL)
 		return (NULL);
 	ptr->age = age;
 	ptr->name = n;
 	ptr->owner = p;
 	return (ptr);
-	
 }
 /**
 * _strlen - Returns the length of a string.
@@ -37,6 +39,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 int _strlen(char *s)
 {
 	int i;
+
 	for (i = 0; s[i] != '\0'; i++)  /* when value at pointed address is '\0' */
 		;
 	return (i);
@@ -44,23 +47,22 @@ int _strlen(char *s)
 /**
 * _strcpy - Copies string pointed to by 'src' including null byte to buffer
 *           pointed to by 'dest'
-* @dest: Pointer to a char type var where string is copied to - destination
 * @src: Pointer to a char type var where string is copied from - source
 * Return: The copied string
 */
-int* _strcpy(char *src)
+char *_strcpy(char *src)
 {
 	int i, len;
 	char *dest;
-	
+
 	len = _strlen(src) + 1;
-	dest = malloc (sizeof(char) * len);
-	if (dest == NULL) 
-		return (NULL);	
+	dest = malloc(sizeof(char) * len);
+	if (dest == NULL)
+		return (NULL);
 	for (i = 0; i < len; i++)
 	{
 		dest[i] = src[i];
 	}
-	dest[i] = '\0';
+	printf("dest - %s\n", dest);
 	return (dest);
-
+}
