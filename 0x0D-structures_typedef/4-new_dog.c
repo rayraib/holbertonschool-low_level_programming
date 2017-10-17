@@ -1,6 +1,5 @@
 #include "dog.h"
 #include <stdlib.h>
-#include <stdio.h>
 int _strlen(char *s);
 char *_strcpy(char *s);
 /**
@@ -22,10 +21,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	n = _strcpy(name);
 	if (n == NULL)
+	{
+		free(ptr);
 		return (NULL);
+	}
 	p = _strcpy(owner);
 	if (p == NULL)
+	{
+		free(n);
+		free(ptr);
 		return (NULL);
+	}
 	ptr->age = age;
 	ptr->name = n;
 	ptr->owner = p;
@@ -63,6 +69,5 @@ char *_strcpy(char *src)
 	{
 		dest[i] = src[i];
 	}
-	printf("dest - %s\n", dest);
 	return (dest);
 }
