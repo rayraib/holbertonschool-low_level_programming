@@ -20,6 +20,7 @@ int (*get_op_func(char *s))(int, int)
 	{"%", op_mod},
 	{NULL, NULL}
 	};
+	i = 0;
 	if (s == NULL)
 		return (NULL);
 	while ((strcmp(s, (ops[i].op)) != 0) && (i < 6))
