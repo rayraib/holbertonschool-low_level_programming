@@ -24,11 +24,6 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	if ((**(argv + 2) == '/' || **(argv + 2) == '%') && (**(argv + 3) == 0))
-	{
-		printf("Error\n");
-		exit(100);
-	}
 	get = get_op_func(str); /* get, a pointer to function, is assigned */
 				 /* the address value returned by get_op_fuc)*/
 	if (get == NULL)
