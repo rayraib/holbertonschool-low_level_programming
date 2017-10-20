@@ -5,7 +5,7 @@
 /**
 * get_op_func - Selects the correct funtion to perform the operation
 *             - asked by a user
-* @get_op_func: Pointer to a function that will perform the operation
+* @s: Pointer to the operator
 * Return: The result of the operation
 *         If failure, NULL.
 */
@@ -23,7 +23,7 @@ int (*get_op_func(char *s))(int, int)
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	while ((strcmp(s, (ops[i].op)) != 0) && (i < 6))
+	while (i < 5 && strcmp(s, ops[i].op) != 0)
 	{
 		i++;
 	}
