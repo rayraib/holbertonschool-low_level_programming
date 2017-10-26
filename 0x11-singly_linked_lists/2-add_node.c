@@ -14,9 +14,8 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	temp->str = strdup(str); /* The str element of temp will hold */
 	temp->len = strlen(temp->str);
-				/* pointer to a copy of the string */
 	if (head != NULL)
 		temp->next = *head;
 	*head = temp;
-	return (temp);
+	return (*head);
 }
