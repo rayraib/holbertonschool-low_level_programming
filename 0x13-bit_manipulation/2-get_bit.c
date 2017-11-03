@@ -9,12 +9,14 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int mask;
 
-	mask = 1;
+	mask = 1; /* has binary value of 0001 */
 	mask = mask << index;
-	if (((sizeof(unsigned long int)) * 8) < index)
+	if (((sizeof(unsigned long int)) * 8) < index)	/*check for*/
+							/* if index is greater than size of num */
 		return (-1);
-	if ((n & mask)  >= 1)
+	if ((n & mask)  >= 1)	/* if n and (&) mask gives 1 or */
+				/* greater number, then the number at that index was 1*/
 		return (1);
-	else
-		return (0);
+	else			/* if n and(&) mask gives result of 0,*/
+		return (0);	/* then the number at that index was 0 */
 }
