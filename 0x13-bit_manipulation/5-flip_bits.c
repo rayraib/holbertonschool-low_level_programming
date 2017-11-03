@@ -10,13 +10,13 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned long int mask, temp, num;
 
 	mask = 1;
-	temp = n ^ m;
+	temp = n ^ m; /* find the numbers of difference between n and m */
 	num = 0;
-	while (temp != 0)
+	while (temp != 0) /* loop until the number is 0 */
 	{
-		if ((temp & mask) == 1)
-			num++;
-		temp = temp >> 1;
+		if ((temp & mask) == 1)/*Check if there is '1'- the diff between n and m*/
+			num++;/*Increment for the number of differences */
+		temp = temp >> 1;/*Shift the num to the right to check at the next index */
 	}
 	return (num);
 }
