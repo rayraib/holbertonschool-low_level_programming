@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 	place = 1;
 	i = 0;
 	if (n == 0)
-		putchar('0');
+		putchar(48);
 	while (place <= n)
 	{
 		place = place * 2;
@@ -21,9 +21,9 @@ void print_binary(unsigned long int n)
 	while (i >= 0)
 	{
 		if (((n >> i) & 1) == 1)
-			putchar('1');
+			putchar(49);
 		else
-			putchar('0');
+			putchar(48);
 		i--;
 	}
 }
