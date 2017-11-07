@@ -10,9 +10,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	int read_cnt;
+	int write_cnt;
 	char *buf;
 
 	buf = malloc(letters);
+	if (buf == NULL)
+		return (0);
 	if (filename == NULL)
 	{
 		return (0);
@@ -23,6 +26,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	read_cnt = read(fd, buf, letters);
 	if (read_cnt < 0)
 		return (0);
-	printf("%s\n", buf);
+	write_cnt = write(STDOUT_FILENO, buf, read_cnt);
+	if (write_cnt < 0)
+		return (0);
 	return (read_cnt);
 }
