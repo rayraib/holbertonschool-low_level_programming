@@ -19,8 +19,8 @@ int create_file(const char *filename, char *text_content)
 	{
 		fd = creat(filename, 00600);
 		if (fd < 0)
-		{		
-			close (fd);
+		{
+			close(fd);
 			return (-1);
 		}
 	}
@@ -38,9 +38,10 @@ int create_file(const char *filename, char *text_content)
 	write_ret = write(fd, text_content, i);
 	if (write_ret < 0)
 	{
-		close (fd);
+		close(fd);
 		return (-1);
 	}
+	*(text_content + 1) = '\0';
 	close(fd);
 	return (1);
 }
