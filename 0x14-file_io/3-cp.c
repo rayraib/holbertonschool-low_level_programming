@@ -1,6 +1,6 @@
 #include "holberton.h"
 void check_close(int csfd, int cdfd);
-void error(int n, char *argv);
+void error(int n, char *argv, char *buf);
 /**
 * main - Copies the content of a file to another file
 * @ac: Argument count
@@ -18,36 +18,36 @@ int main(int ac, char *argv[])
 	char *buf;
 
 	read_cnt = 1;
-	if (argv == NULL)
-		return (-1);
-	if (ac != 3)
-		error(3, argv[0]);
-	sfd = open(argv[1], O_RDONLY);/* open source file */
-	if (sfd == -1)
-		error(98, argv[1]);
 	buf = malloc(1024);
 	if (buf == NULL)
 		return (-1);
+	if (argv == NULL)
+		return (-1);
+	if (ac != 3)
+		error(3, argv[0], buf);
+	sfd = open(argv[1], O_RDONLY);/* open source file */
+	if (sfd == -1)
+		error(98, argv[1], buf);
 	dfd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);/* open dest file */
 						/*if doesn't already exist, create*/
 						/* if alread exists, truncate it */
 	if (dfd == -1)
-		error(99, argv[2]);
+		error(99, argv[2], buf);
 	while (read_cnt != 0)
 	{
 		read_cnt = read(sfd, buf, 1024);/*read source file to buffer */
 		if (read_cnt == -1)
-			error(98, argv[1]);
+			error(98, argv[1], buf);
 		if (read_cnt == 0)/*check if there was 0 chars read */
 			return (1);
 		write_cnt = write(dfd, buf, 1024);/*write to dest from buffer */
 		if (write_cnt == -1)
-			error(99, argv[2]);
+			error(99, argv[2], buf);
 	}
+	free(buf);
 	csfd = close(sfd);
 	cdfd = close(dfd);
 	check_close(csfd, cdfd);
-	free(buf);
 	return (0);
 }
 /**
@@ -72,9 +72,11 @@ void check_close(int csfd, int cdfd)
 * error - outputs message for each error
 * @n: error number
 * @argv: pointer to filename
+* @buf: buffere pointer
 */
-void error(int n, char *argv)
+void error(int n, char *argv, char *buf)
 {
+	free(buf);
 	if (n == 98)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv);
