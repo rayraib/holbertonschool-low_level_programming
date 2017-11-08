@@ -19,7 +19,10 @@ int create_file(const char *filename, char *text_content)
 	{
 		fd = creat(filename, 00600);
 		if (fd < 0)
+		{		
+			close (fd);
 			return (-1);
+		}
 	}
 	while (*temp != '\0')
 	{
@@ -28,10 +31,16 @@ int create_file(const char *filename, char *text_content)
 	}
 	fd = creat(filename, 00600);
 	if (fd < 0)
+	{
+		close(fd);
 		return (-1);
+	}
 	write_ret = write(fd, text_content, i);
 	if (write_ret < 0)
+	{
+		close (fd);
 		return (-1);
+	}
 	close(fd);
 	return (1);
 }
