@@ -17,7 +17,7 @@ int main(int ac, char *argv[])
 	int sfd, dfd, write_cnt, read_cnt, csfd, cdfd;
 	char *buf;
 
-	read_cnt = 1;
+	read_cnt = 1024;
 	buf = malloc(1024);
 	if (buf == NULL)
 		return (-1);
@@ -28,19 +28,17 @@ int main(int ac, char *argv[])
 	sfd = open(argv[1], O_RDONLY);/* open source file */
 	if (sfd == -1)
 		error(98, argv[1], buf);
-	dfd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);/* open dest file */
+	dfd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);/* open dest file */
 						/*if doesn't already exist, create*/
 						/* if alread exists, truncate it */
 	if (dfd == -1)
 		error(99, argv[2], buf);
-	while (read_cnt != 0)
+	while (read_cnt == 1024)
 	{
 		read_cnt = read(sfd, buf, 1024);/*read source file to buffer */
 		if (read_cnt == -1)
 			error(98, argv[1], buf);
-		if (read_cnt == 0)/*check if there was 0 chars read */
-			return (1);
-		write_cnt = write(dfd, buf, 1024);/*write to dest from buffer */
+		write_cnt = write(dfd, buf, read_cnt);/*write to dest from buffer */
 		if (write_cnt == -1)
 			error(99, argv[2], buf);
 	}
