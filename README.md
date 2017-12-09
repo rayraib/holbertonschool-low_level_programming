@@ -20,7 +20,7 @@ Project is to learn about what recursion is and when and how to use it.
 ## 0x08-static_libraries
 Project is to learn about libraries, how to create
 ## 0x09-argc_argv
-Project is to learn about 'argc' and 'argv', what they are and how to use them.
+Project is to learn about `argc` and `argv`, what they are and how to use them.
 ## 0x0A-malloc_free
 To learn about what malloc, how and where to use it, and practice its usage.
 ## 0x0B-more_malloc_free
@@ -41,5 +41,5 @@ Project to learn how to use linked lists.
 Project to learn how to manipulate bits and use bitwise operators in C language.
 ## 0x14-file_io
 Project to learn what are file descriptors, how to open, close, read, and write files, what system calls are and how to use the I/O system calls `open`, `close`, `read`, `write`, and `dprintf`.
-##0x16-doubly_linked_lists
+## 0x16-doubly_linked_lists
 Project to learn and understand what doubly linked list is, how to use doubly linked lists.
