@@ -62,6 +62,7 @@ dlistint_t *add_dnodeint_mid(dlistint_t **h, int n)
 	((*h)->prev)->next = new_node;
 	new_node->prev = (*h)->prev;
 	new_node->next = *h;
+	(*h)->prev = new_node;
 	new_node->n = n;
 	return (new_node);
 }
