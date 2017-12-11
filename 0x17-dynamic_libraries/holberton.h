@@ -20,5 +20,6 @@ char *_strchr(char *s, char c);
 unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
-#endif /* _HOLBERTON_H_ */
+#define EXIT_SUCCESS 0
 #define NULL ((char *)0)
+#endif /* _HOLBERTON_H_ */
