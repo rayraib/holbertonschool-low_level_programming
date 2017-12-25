@@ -4,7 +4,7 @@ This project contains task to learn about what C programmaing language is and it
 
 |### 0-preprocessor|Script to run a C file through the preprocessor and save the result into another file.
 The C file name will be saved in varialbe `$CFILE`. Output saved in file c.|
-|:________________________________________|:_______________________________________________________________:|
+|:---------|:------------:|
 ### 1-compiler
 Script to compile a C file but not link
 ### 2-assembler
