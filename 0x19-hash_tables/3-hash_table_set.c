@@ -14,20 +14,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *head = NULL;
 	hash_node_t *new_node = NULL;
 
+	if (ht == NULL || key == NULL || value == NULL)
+		return (0);
 	size = ht->size;
 	index = key_index((unsigned char *)key, size);
-	head = (ht->array)[index];
+	head = (ht->array)[index];/* head points to the desired index */
 	new_node = create_new_node(key, value);
 	if (new_node == NULL)
 		return (0);
-	if (head == NULL)
+	if (head == NULL)/* key is the first key/value */
 	{
-		head = new_node;
+		ht->array[index] = new_node;
 		return (1);
 	}
-	new_node->next = head;
-	head = new_node;
-	printf("key: %s\n", head->key);
+	new_node->next = ht->array[index];/* some other key already exists */
+	ht->array[index] = new_node;
 	return (1);
 }
 /**
