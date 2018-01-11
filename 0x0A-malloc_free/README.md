@@ -1,17 +1,13 @@
 # 0x0A-malloc_free 
-To learn about what malloc, how and where to use it, and practice its usage.  
-
-### 0-create_array.c
-A function that creates an array of chars, and initializes it with a specific char.
-### 1-strdup.c
-A function that returns a pointer to a newly allocated space in memory, which contains a copy of the string given as a parameter.
-### 2-str_concat.c
-A function that concatenates two strings.
-### 3-alloc_grid.c
-A function that returns a pointer to a 2 dimensional array of integers.
-### 4-free_grid.c
-A function that frees a 2 dimensional grid previously created by your alloc_grid function.
-### 5-argstostr.c
-A function that concatenates all the arguments of your program.
-
-
+### Synposis
+#### *Holberton School* project to learn about: `malloc`, how and where is is used, and practice its implementation.  
+--------------------
+### Tasks
+| Tasks | Description |
+| ------ | -------- |
+|**0-create_array.c**| Creates an array of chars, and initializes it with a specific char.|
+|**1-strdup.c**| Alloccates a memory space and copies a string into it. Returns a pointer to the newly allocated space with string|
+|**2-str_concat.c**| Concatenates two strings to a newly allocated memory location.|
+|**3-alloc_grid.c**| Creates and returns a pointer to a 2 dimensional array of integers.|
+|**4-free_grid.c**| Frees a 2 dimensional grid previously created by your alloc_grid function.|
+|**5-argstostr.c**| Concatenates all the arguments of a program.|
