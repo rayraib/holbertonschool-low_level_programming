@@ -14,10 +14,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (ht == NULL || key == NULL)
 		return (NULL);
 	size = ht->size;
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size; i++)/*loop through each index of the array */
 	{
 		head = (ht->array)[i];
-		while (head != NULL)
+		while (head != NULL)/*traverse chain linked-list or key/value*/
 		{
 			if (head->key == key)
 				return (head->value);
