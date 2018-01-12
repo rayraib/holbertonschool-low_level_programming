@@ -71,6 +71,7 @@ int check_key_exists(hash_table_t *ht, const char *key,
 	{
 		if (strcmp(head->key, key) == 0)
 		{
+			free(head->value);
 			head->value = (strdup(value));
 			return (1);
 		}
