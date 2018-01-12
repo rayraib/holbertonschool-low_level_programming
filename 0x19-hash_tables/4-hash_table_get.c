@@ -11,6 +11,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *head;
 	unsigned long size;
 
+	if (ht == NULL || key == NULL)
+		return (NULL);
 	size = ht->size;
 	for (i = 0; i < size; i++)
 	{
