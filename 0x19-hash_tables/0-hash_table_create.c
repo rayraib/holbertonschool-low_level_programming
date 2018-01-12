@@ -25,9 +25,9 @@ hash_table_t *hash_table_create(unsigned long int size)
 */
 void initialize_array(hash_table_t *table)
 {
-	hash_node_t *head;
+	hash_node_t *head = NULL;
 
-	head = table->array;
+	head = (table->array)[0];
 	while (head)
 	{
 		head = NULL;
