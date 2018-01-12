@@ -14,9 +14,6 @@ hash_table_t *hash_table_create(unsigned long int size)
 	table->size = size;
 	table->array = malloc(size * 8);/*create an array of pointers*/
 	if (table->array == NULL)
-	{
-		free(table);
 		return (NULL);
-	}
 	return (table);
 }
