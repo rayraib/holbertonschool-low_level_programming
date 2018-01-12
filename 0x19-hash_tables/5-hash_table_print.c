@@ -11,12 +11,12 @@ void hash_table_print(const hash_table_t *ht)
 	int first_flag = 0;
 
 	size = ht->size;
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size; i++)/*traverse through each index of array*/
 	{
 		head = (ht->array)[i];
-		while (head != NULL)
+		while (head != NULL)/*traverse through each chained link-list*/
 		{
-			if (first_flag == 0)
+			if (first_flag == 0)/*flag to check if first element*/
 			{
 				printf("{'%s': '%s'", head->key, head->value);
 				first_flag = 1;
