@@ -19,7 +19,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		head = (ht->array)[i];
 		while (head != NULL)/*traverse chain linked-list or key/value*/
 		{
-			if (head->key == key)
+			if (strcmp(head->key, key) == 0)
 				return (head->value);
 			head = head->next;
 		}
