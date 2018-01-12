@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 /**
-* hash_table_delete- delete a hash table
+* hash_table_delete - delete a hash table
 * @ht: table to delete
 */
 void hash_table_delete(hash_table_t *ht)
@@ -18,8 +18,9 @@ void hash_table_delete(hash_table_t *ht)
 		while (head != NULL)
 		{
 			head = head->next;
-			free(tmp->key);
+			/*free(tmp->key);
 			free(tmp->value);
+*/
 			free(tmp);
 			tmp = head;
 		}
