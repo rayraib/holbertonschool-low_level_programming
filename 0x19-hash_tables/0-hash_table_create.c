@@ -25,12 +25,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 */
 void initialize_array(hash_table_t *table)
 {
-	hash_node_t *head = NULL;
+	unsigned long i;
 
-	head = (table->array)[0];
-	while (head)
+	for (i = 0; i < (table->size); i++)
 	{
-		head = NULL;
-		head++;
+		((table->array)[i]) = NULL;
 	}
 }
