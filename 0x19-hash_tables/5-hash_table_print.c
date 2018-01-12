@@ -10,26 +10,29 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *head;
 	int first_flag = 0;
 
-	size = ht->size;
-	for (i = 0; i < size; i++)/*traverse through each index of array*/
+	if (ht != NULL)
 	{
-		head = (ht->array)[i];
-		while (head != NULL)/*traverse through each chained link-list*/
+		size = ht->size;
+		for (i = 0; i < size; i++)/*traverse through each index of array*/
 		{
-			if (first_flag == 0)/*flag to check if first element*/
+			head = (ht->array)[i];
+			while (head != NULL)/*traverse through each chained link-list*/
 			{
-				printf("{'%s': '%s'", head->key, head->value);
-				first_flag = 1;
-				head = head->next;
+				if (first_flag == 0)/*flag to check if first element*/
+				{
+					printf("{'%s': '%s'", head->key, head->value);
+					first_flag = 1;
+					head = head->next;
+				}
+				else
+				{
+					printf(", '%s': '%s'", head->key, head->value);
+					head = head->next;
+				}
 			}
-			else
-			{
-				printf(", '%s': '%s'", head->key, head->value);
-				head = head->next;
-			}
+			if (i == size - 1 && first_flag == 0)
+				printf("{");
 		}
-		if (i == size - 1 && first_flag == 0)
-			printf("{");
+		printf("}\n");
 	}
-	printf("}\n");
 }
