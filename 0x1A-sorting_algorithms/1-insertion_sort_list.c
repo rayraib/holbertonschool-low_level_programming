@@ -7,8 +7,8 @@
 int swap_nodes(listint_t **list);
 void insertion_sort_list(listint_t **list)
 {
-	int i;
 	listint_t *key;
+	listint_t *tmp;
 
 	key = (*list);
 	if (list != NULL && *list != NULL)
@@ -16,9 +16,11 @@ void insertion_sort_list(listint_t **list)
 		while (key->next != NULL)
 		{
 			key = key->next;
-			i = 0;
+			tmp = key;
+			/* loop as long as n value of previous node is bigger*/
 			while (key->prev != NULL && key->n < key->prev->n)
 			{
+				/*swap the nodes */
 				key->prev->next = key->next;
 				key->next = key->prev;
 				key->prev = key->next->prev;
@@ -28,15 +30,12 @@ void insertion_sort_list(listint_t **list)
 				if (key->prev)
 					key->prev->next = key;
 				else
+					/*re-assign the head of the node*/
 					*list = key;
-				i++;
 				print_list(*list);
 			}
-			while ( i != 0)
-			{
-				key = key->next;
-				i--;
-			}
+			/* re-assign key back to the correct index position*/
+			key = tmp;
 		}
 	}
 }
