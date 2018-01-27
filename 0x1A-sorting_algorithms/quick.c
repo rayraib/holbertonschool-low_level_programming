@@ -47,12 +47,17 @@ void quick_sort(int *array, size_t size)
 			{
 				sorted_flag = 1;
 			}
-			else
+			else if ( (end - beg) < 3)
 			{
 				if (bub_sort(array, beg, end, size, count) == 1)
 					print_array(array, size);
 				beg = end + 1;
 				end = prev_end;
+			}
+			else
+			{
+				end = end - 1;
+				prev_end = end;
 			}
 		} 
 	} 
@@ -115,6 +120,7 @@ int bub_sort(int *array, size_t beg, size_t end, size_t size, int count)
 				array[i] = array[i + 1];
 				array[i + 1] = tmp;
 				swap_flag = 1;
+				printf("bs\n");
 			}
 		}
 		if (swap_flag == 0)
