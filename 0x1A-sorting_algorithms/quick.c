@@ -7,7 +7,7 @@ void quick_sort(int *array, size_t size)
 	int sorted_flag = 0;
 	int swap_flag = 0;
 	int pivot;
-	size_t beg, end, i, j, prev_end;
+	size_t beg, end, i, j;/*, prev_end;*/
 	int count = 0;
 
 	beg = 0;
@@ -38,7 +38,7 @@ void quick_sort(int *array, size_t size)
 		swap_flag = swap_values(array, i, end, size);
 		if (swap_flag == 1)
 		{
-			prev_end = end;
+			/*prev_end = end;*/
 			end = i;
 		}
 		else
@@ -52,12 +52,12 @@ void quick_sort(int *array, size_t size)
 				if (bub_sort(array, beg, end, size, count) == 1)
 					print_array(array, size);
 				beg = end + 1;
-				end = prev_end;
+				end = size - 1;
 			}
 			else
 			{
 				end = end - 1;
-				prev_end = end;
+				/*prev_end = end;*/
 			}
 		} 
 	} 
