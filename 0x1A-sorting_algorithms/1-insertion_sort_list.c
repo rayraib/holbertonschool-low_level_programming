@@ -37,27 +37,3 @@ void insertion_sort_list(listint_t **list)
 		key = tmp;
 	}
 }
-/*
-{
-	int i;
-	listint_t *key;
-
-	key = *list;
-	while (key->prev != NULL && key->n < key->prev->n)
-	{
-		key->prev->next = key->next;
-		key->next = key->prev;
-		key->prev = key->next->prev;
-		key->next->prev = key;
-		if (key->next->next)
-			key->next->next->prev = key->next;
-		if (key->prev)
-			key->prev->next = key;
-		else
-			*list = key;
-		i++;
-		print_list(*list);
-	}
-	return (i);
-}
-*/
