@@ -1,10 +1,9 @@
 #include "sort.h"
 /**
-* insertion_sort_key - sort a doubly linked list of integers
+* insertion_sort_list- sort a doubly linked list of integers
 *                        in ascending order
-* @key: pointer to the list of linked list
+* @list: pointer to the list of linked list
 */
-int swap_nodes(listint_t **list);
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *key;
@@ -30,7 +29,7 @@ void insertion_sort_list(listint_t **list)
 				if (key->prev)
 					key->prev->next = key;
 				else
-					/*re-assign the head of the node*/
+					/*re-assign key as new head of node*/
 					*list = key;
 				print_list(*list);
 			}
@@ -40,7 +39,6 @@ void insertion_sort_list(listint_t **list)
 	}
 }
 /*
-int swap_nodes(listint_t **list)
 {
 	int i;
 	listint_t *key;

@@ -25,6 +25,7 @@ void quick_sort(int *array, size_t size)
 * @end: Upper end of the array to sort from
 * @size: Original size of the array
 * @count: Count of recursive call
+* Return: 1 if array is sorted, else 0
 */
 int sort(int *array, size_t beg, size_t end, size_t size, int count)
 {
@@ -53,8 +54,8 @@ int sort(int *array, size_t beg, size_t end, size_t size, int count)
 		/* check if the aray is sorted*/
 		if (check_if_sorted(array, beg, end) == 1)	
 			return (count);
-		  /*move one index back and set it as the end index
-		  because current end num is the largest num in the array*/
+		/*move one index back and set it as the end index
+		because current end num is the largest num in the array*/
 		end = end - 1;
 		sort(array, beg, end, size, count);
 	}
@@ -74,6 +75,8 @@ int sort(int *array, size_t beg, size_t end, size_t size, int count)
 * @array: Array with elements to swap 
 * @first: Index of first element to swap
 * @second: Index of the second element to swap
+* @size: Complete size of the array
+* Return: 1 if elements swapped in array, else 0
 */
 int swap_values(int *array, size_t first, size_t second, size_t size)
 {
@@ -93,7 +96,8 @@ int swap_values(int *array, size_t first, size_t second, size_t size)
 /**
 * check_if_sorted - check if an array of int is sorted in ascending order
 * @array: array to check
-* @size: size of array
+* @beg: Index to start checking in the array 
+* @end: Upper bound index of range to check if sorted
 * Return: 1 if sorted, Else 0
 */
 int check_if_sorted( int *array, size_t beg, size_t end)
