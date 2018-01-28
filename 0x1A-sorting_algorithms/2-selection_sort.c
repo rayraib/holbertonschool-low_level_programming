@@ -8,6 +8,9 @@ void selection_sort(int *array, size_t size)
 {
 	size_t i, j;
 	int key, sm_idx;
+
+	if (size < 2)
+		return;
 	for (i = 0; i < size; i++)
 	{
 		j = i + 1;
