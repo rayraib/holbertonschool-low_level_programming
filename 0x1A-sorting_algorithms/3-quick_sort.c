@@ -4,7 +4,7 @@ int check_if_sorted(int *array, size_t beg, size_t end);
 int sort(int *array, size_t beg, size_t end, size_t size, int count);  
 /**
 * quick_sort - Sort an array of int in ascending order using quick sort
-* @array: Array of int to sort
+* @array: Array to sort
 * @size: Size of the array
 */
 void quick_sort(int *array, size_t size)
@@ -58,7 +58,7 @@ int sort(int *array, size_t beg, size_t end, size_t size, int count)
 		end = end - 1;
 		sort(array, beg, end, size, count);
 	}
-	/* a swap occured*/
+	/* swap occured*/
 	else
 	{
 		/*call sort on the lowert partition*/
