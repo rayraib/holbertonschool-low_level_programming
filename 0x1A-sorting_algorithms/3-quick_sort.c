@@ -52,8 +52,8 @@ int sort(int *array, size_t beg, size_t end, size_t size, int count)
 	if (swap_flag == 0)
 	{
 		/* check if the aray is sorted*/
-		if (check_if_sorted(array, beg, end) == 1)	
-			return (count);
+		/*if (check_if_sorted(array, beg, end) == 1)	
+			return (count);*/
 		/*move one index back and set it as the end index
 		because current end num is the largest num in the array*/
 		end = end - 1;
