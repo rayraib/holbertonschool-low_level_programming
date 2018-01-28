@@ -1,7 +1,7 @@
 #include "sort.h"
 int swap_values(int *array, size_t first, size_t second, size_t size);
 int check_if_sorted(int *array, size_t beg, size_t end);
-int sort(int *array, size_t beg, size_t end, size_t size, int count);  
+int sort(int *array, size_t beg, size_t end, size_t size, int count);
 /**
 * quick_sort - Sort an array of int in ascending order using quick sort
 * @array: Array to sort
@@ -15,7 +15,7 @@ void quick_sort(int *array, size_t size)
 	if (size < 1)
 		return;
 	count = 0;
-	beg = 0;	
+	beg = 0;
 	end = size - 1;
 	count = (sort(array, beg, end, size, count));
 }
@@ -37,8 +37,7 @@ int sort(int *array, size_t beg, size_t end, size_t size, int count)
 	pivot = array[end];
 	j = beg;
 	i = j - 1;
-	/* compare each element to the pivot value of the  partition,
-	   smaller values go the the left and larger to the right of pivot*/
+	   /*smaller values go the the left and larger to the right of pivot*/
 	for (j = beg; j < end; j++)
 	{
 		if (array[j] <= pivot)
@@ -53,10 +52,9 @@ int sort(int *array, size_t beg, size_t end, size_t size, int count)
 	if (swap_flag == 0)
 	{
 		/* check if the aray is sorted*/
-		if (check_if_sorted(array, beg, end) == 1)	
+		if (check_if_sorted(array, beg, end) == 1)
 			return (count);
-		/*move one index back and set it as the end index
-		because current end num is the largest num in the array*/
+		/*move one index back and set it as the end index*/
 		end = end - 1;
 		sort(array, beg, end, size, count);
 	}
@@ -65,15 +63,15 @@ int sort(int *array, size_t beg, size_t end, size_t size, int count)
 	{
 		/*call sort on the lowert partition*/
 		sort(array, beg, i, size, count);
-		/* call sort on the upper partition*/ 
+		/* call sort on the upper partition*/
 		sort(array, i, end, size, count);
 	}
 	return (count);
 
 }
 /**
-* swap_values - Swap values at two given indexes of an array 
-* @array: Array with elements to swap 
+* swap_values - Swap values at two given indexes of an array
+* @array: Array with elements to swap
 * @first: Index of first element to swap
 * @second: Index of the second element to swap
 * @size: Complete size of the array
@@ -97,11 +95,11 @@ int swap_values(int *array, size_t first, size_t second, size_t size)
 /**
 * check_if_sorted - check if an array of int is sorted in ascending order
 * @array: array to check
-* @beg: Index to start checking in the array 
+* @beg: Index to start checking in the array
 * @end: Upper bound index of range to check if sorted
 * Return: 1 if sorted, Else 0
 */
-int check_if_sorted( int *array, size_t beg, size_t end)
+int check_if_sorted(int *array, size_t beg, size_t end)
 {
 	size_t x;
 
@@ -109,7 +107,7 @@ int check_if_sorted( int *array, size_t beg, size_t end)
 	for (x = beg; x < end; x++)
 	{
 		/*bigger number in front means NOT sorted*/
-		if (array[x] > array[x + 1])	
+		if (array[x] > array[x + 1])
 			return (0);
 	}
 	return (1);
