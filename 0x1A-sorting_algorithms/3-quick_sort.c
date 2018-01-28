@@ -1,30 +1,34 @@
 #include "sort.h"
 int swap_values(int *array, size_t first, size_t second, size_t size);
 int check_if_sorted(int *array, size_t beg, size_t end);
-int part_array(int *array, size_t beg, size_t end, size_t size);  
+int sort(int *array, size_t beg, size_t end, size_t size, int count);  
 void quick_sort(int *array, size_t size)
 {
 	size_t beg, end;
+	int count;
 
+	count = 0;
 	beg = 0;	
 	end = size - 1;
-	part_array(array, beg, end, size);
+	count = (sort(array, beg, end, size, count));
+	printf("count: %d\n", count);
 }
 /**
 * part_array - partion each array as lesser and greater than pivot value
 * @beg:
 */
-int part_array(int *array, size_t beg, size_t end, size_t size)  
+int sort(int *array, size_t beg, size_t end, size_t size, int count)
 {
 	int pivot, swap_flag = 0;
 	size_t i, j;
 
+	count++;
 	pivot = array[end];
 	j = beg;
 	i = j - 1;
 	for (j = beg; j < end; j++)
 	{
-		if (array[j] < pivot)
+		if (array[j] <= pivot)
 		{
 			i++;
 			swap_flag = (swap_values(array, i, j, size));
@@ -35,16 +39,16 @@ int part_array(int *array, size_t beg, size_t end, size_t size)
 	if (swap_flag == 0)
 	{
 		if (check_if_sorted(array, beg, end) == 1)	
-			return (1);
+			return (count);
 		end = end - 1;
-		part_array(array, beg, end, size);
+		sort(array, beg, end, size, count);
 	}
 	else
 	{
-		part_array(array, beg, i, size);
-		part_array(array, i, end, size);
+		sort(array, beg, i, size, count);
+		sort(array, i, end, size, count);
 	}
-	return (1);
+	return (count);
 
 }
 /**
