@@ -17,7 +17,7 @@ void selection_sort(int *array, size_t size)
 		key = array[i];
 		while (j < size)
 		{
-			/*check if key is the smallest number*/ 
+			/*check if key is the smallest number*/
 			if (key > array[j])
 			{
 				key = array[j];
