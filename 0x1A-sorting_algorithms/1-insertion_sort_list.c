@@ -24,8 +24,10 @@ void insertion_sort_list(listint_t **list)
 			key->next = key->prev;
 			key->prev = key->next->prev;
 			key->next->prev = key;
+			/*if next node is NOT the last node*/
 			if (key->next->next)
 				key->next->next->prev = key->next;
+			/*if key is not pointing to the first node*/
 			if (key->prev)
 				key->prev->next = key;
 			else
