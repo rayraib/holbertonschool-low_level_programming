@@ -11,27 +11,31 @@ void shell_sort(int *array, size_t size)
 	size_t gap;
 	size_t i;
 	size_t j;
-	size_t i_val;
+	size_t k;
 
 	if (size < 1)
 		return;
+	/*get initial, largest gap size*/
 	gap = find_gap(size);
 	i = 0;
 	while (gap > 0)
 	{
-		i_val = i;
-		j = i + gap;
+		/*k starts at same index as i*/
+		k = i;
+		j = k + gap;
 		while (j < size)
 		{
-			swap_values(array, i, j, gap);
-			i = j;
+			swap_values(array, k, j, gap);
+			k = j;
 			j = j + gap;
 		}
-		i = i_val;
 		i++;
+		/*check if all the elements in the gap range is compared*/
 		if (i >= gap)
 		{
+			/*decrement gap to the next smaller gap size*/
 			gap = (gap - 1) / 3;
+			/*re-assign i to index 0 to start over*/
 			i = 0;
 			print_array(array, size);
 		}
