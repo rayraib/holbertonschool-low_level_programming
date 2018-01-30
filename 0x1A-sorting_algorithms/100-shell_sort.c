@@ -13,7 +13,7 @@ void shell_sort(int *array, size_t size)
 	size_t j;
 	size_t k;
 
-	if (size < 1)
+	if (size < 2)
 		return;
 	/*get initial, largest gap size*/
 	gap = find_gap(size);
