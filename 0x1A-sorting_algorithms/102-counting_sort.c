@@ -9,8 +9,7 @@ void set_sort_value(int *array, int *new_array, size_t new_size, size_t size);
 */
 void counting_sort(int *array, size_t size)
 {
-	size_t i, new_size;
-	size_t min_val;
+	size_t i, new_size, min_val;
 	int max, x, min;
 	int *new_array;
 
@@ -22,7 +21,6 @@ void counting_sort(int *array, size_t size)
 		if (max < array[i])
 			max = array[i];
 	}
-	/*find the range/size for the new array*/
 	min_val = min;
 	new_size = max + 1;
 	/*allocate memory for the new array*/
@@ -32,7 +30,6 @@ void counting_sort(int *array, size_t size)
 	/*set the new array to be 0 in each index*/
 	for (i = 0; i < new_size; i++)
 		new_array[i] = 0;
-	/*for each index(that is the value in og array*/
 	/*set how many of the values are there*/
 	for (i = 0; i < size; i++)
 	{
@@ -40,13 +37,16 @@ void counting_sort(int *array, size_t size)
 		new_array[x] += 1;
 	}
 	/*each index value is sum of it's and it's prev index's value*/
-	for (i = 1; i <= new_size; i++)
+	for (i = min; i <= new_size; i++)
 		new_array[i] += new_array[i - 1];
 	print_array(new_array, new_size);
 	/*shift the array to the right by one index*/
 	for (i = new_size - 1; i > min_val; i--)
 		new_array[i] = new_array[i - 1];
-	array[min] = 0;
+	if (min != 0)
+		new_array[min] = new_array[min - 1];
+	else
+		new_array[min] = 0;
 	set_sort_value(array, new_array, new_size, size);
 }
 
