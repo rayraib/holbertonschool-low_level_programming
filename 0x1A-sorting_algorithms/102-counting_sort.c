@@ -10,7 +10,8 @@ void set_sort_value(int *array, int *new_array, size_t new_size, size_t size);
 void counting_sort(int *array, size_t size)
 {
 	size_t i, new_size;
-	int min, max, x;
+	size_t min_val;
+	int max, x, min;
 	int *new_array;
 
 	min = max = array[0];
@@ -22,6 +23,7 @@ void counting_sort(int *array, size_t size)
 			max = array[i];
 	}
 	/*find the range/size for the new array*/
+	min_val = min;
 	new_size = max + 1;
 	/*allocate memory for the new array*/
 	new_array = malloc(sizeof(int) * new_size);
@@ -30,8 +32,6 @@ void counting_sort(int *array, size_t size)
 	/*set the new array to be 0 in each index*/
 	for (i = 0; i < new_size; i++)
 		new_array[i] = 0;
-	printf("array with 0 set\n");
-	print_array(new_array, new_size);
 	/*for each index(that is the value in og array*/
 	/*set how many of the values are there*/
 	for (i = 0; i < size; i++)
@@ -39,17 +39,14 @@ void counting_sort(int *array, size_t size)
 		x = array[i];
 		new_array[x] += 1;
 	}
-	printf("array with number of values set\n");
-	print_array(new_array, new_size);
 	/*each index value is sum of it's and it's prev index's value*/
-	for (i = 1; i < new_size; i++)
+	for (i = 1; i <= new_size; i++)
 		new_array[i] += new_array[i - 1];
-	/*shift the array to the right by one index*/
-	for (i = new_size - 1; i > 0; i--)
-		new_array[i] = new_array[i - 1];
-	new_array[0] = 0;
-	printf("array with values shifted to the right\n");
 	print_array(new_array, new_size);
+	/*shift the array to the right by one index*/
+	for (i = new_size - 1; i > min_val; i--)
+		new_array[i] = new_array[i - 1];
+	array[min] = 0;
 	set_sort_value(array, new_array, new_size, size);
 }
 
@@ -67,8 +64,10 @@ void set_sort_value(int *array, int *new_array, size_t new_size, size_t size)
 	for (i = 0; i < new_size; i++)
 	{
 		current_val = new_array[i];
+		/*if i is the last index of the new_array*/
 		if (i == new_size - 1)
 		{
+			/*assign remaining index in og array the index value*/
 			while (current_val < size)
 			{
 				array[current_val] = i;
