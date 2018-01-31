@@ -13,6 +13,8 @@ void counting_sort(int *array, size_t size)
 	int max, x, min;
 	int *new_array;
 
+	if (size < 2)
+		return;
 	min = max = array[0];
 	for (i = 0; i < size; i++)
 	{
@@ -23,7 +25,6 @@ void counting_sort(int *array, size_t size)
 	}
 	min_val = min;
 	new_size = max + 1;
-	/*allocate memory for the new array*/
 	new_array = malloc(sizeof(int) * new_size);
 	if (new_array == NULL)
 		return;
