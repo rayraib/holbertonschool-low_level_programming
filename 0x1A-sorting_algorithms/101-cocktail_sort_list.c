@@ -41,7 +41,8 @@ void cocktail_sort_list(listint_t **list)
 		if (swap_flag == 0)
 			return;
 		key = key->prev->prev;
-		compare = key->next;
+		if (key != NULL)
+			compare = key->next;
 		swap_flag = turtle_sort(&(*list), key, compare);
 		if (swap_flag == 0)
 			return;
