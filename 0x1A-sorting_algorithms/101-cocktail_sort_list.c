@@ -31,6 +31,8 @@ void cocktail_sort_list(listint_t **list)
 				compare = key->next;
 				swap_flag = 1;
 			}
+			if (swap_flag == 0)
+				return;
 			else
 			{
 				/*move key and compare one node forward each*/
