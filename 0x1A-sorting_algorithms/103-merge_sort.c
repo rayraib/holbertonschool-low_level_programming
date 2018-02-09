@@ -1,6 +1,9 @@
 #include "sort.h"
 void divide(size_t low, size_t, int *array, int *new_array, size_t);
 void merge(size_t, size_t, size_t, int *, int *, size_t);
+/*
+* merge_sort - sort an array of integers using the merge sort
+*/
 void merge_sort(int *array, size_t size)
 {
     int *new_array;
