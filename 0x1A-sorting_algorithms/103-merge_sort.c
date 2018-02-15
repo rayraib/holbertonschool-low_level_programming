@@ -34,8 +34,11 @@ void divide(size_t low, size_t high, int *array, int *new_array, size_t size)
     else
     {
         mp = (low + high) / 2;
+        /*call the left array to be divided again*/
         divide(low, mp, array, new_array, size);
+        /* call the right array to be divided again*/
         divide(mp + 1, high, array, new_array, size);
+        /* call the left and right array to be sort and merged*/
         merge(low, mp, high, array, new_array, size);
     } 
 }
