@@ -1,4 +1,4 @@
-#Make executable file holberton
+#_*_ Makefile _*_
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = main.c holberton.c
