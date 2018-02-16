@@ -5,9 +5,7 @@ OBJ = $(SRC:.c=.o)
 NAME = holberton
 RM = rm -f
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 re: oclean all
