@@ -9,15 +9,12 @@ RM = rm -f
 all: $(OBJ)
 	$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
 
-re: $(OBJ)
-	$(RM) *.o
-	$(CC) -c -o main.o main.c
-	$(CC) -c -o holberton.o holberton.c
-	$(CC) $(OBJ) -o $(NAME)
 clean:
 	$(RM) *~ $(NAME)
+
 oclean:
 	$(RM) *.o
-fclean:
-	$(RM) *~ $(NAME)
-	$(RM) *.o
+
+fclean: clean oclean
+
+re: oclean all
