@@ -1,0 +1,25 @@
+#Make executable file holberton
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+NAME = holberton
+RM = rm -f
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
+
+re: $(OBJ)
+	$(RM) *.o
+	$(CC) -c -o main.o main.c
+	$(CC) -c -o holberton.o holberton.c
+	$(CC) $(OBJ) -o $(NAME)
+clean:
+	$(RM) *~ $(NAME)
+oclean:
+	$(RM) *.o
+fclean:
+	$(RM) *~ $(NAME)
+	$(RM) *.o

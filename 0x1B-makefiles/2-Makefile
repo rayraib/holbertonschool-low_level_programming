@@ -1,0 +1,12 @@
+# _*_ 2-Makefile_*_
+# Create executable holberton using variables
+CC=gcc
+SRC=main.c holberton.c
+OBJ= $(SRC:.c=.o)
+NAME=holberton
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	rm -f *.o holberton

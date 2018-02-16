@@ -1,0 +1,7 @@
+# _*_ 0-Makefile _*_
+# Create executable for holberton.c and main.c
+CC = gcc
+SRC = main.c holberton.c
+all: holberton
+holberton: main.c holberton.c m.h
+	$(CC) $(SRC) -o holberton
