@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* _strcat - Appends the 'src' string to 'dest' string, overwriting the '\0'
+* - Appends the 'src' string to 'dest' string, overwriting the '\0'
 * @dest: Pointer to a char var where the string is to be appended into
 * @src: Pointer to a char var from where the string is taken to be appended
 *
@@ -8,7 +8,7 @@
 */
 char *_strcat(char *dest, char *src)
 {
-	int d_len, s_len, i;
+	int d_len, s_len, i;  
 	char *temp;
 
 	for (d_len = 0; dest[d_len] != '\0'; d_len++)

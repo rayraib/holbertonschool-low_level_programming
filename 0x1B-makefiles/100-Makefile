@@ -1,0 +1,21 @@
+#_*_ Makefile _*_
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+NAME = holberton
+RM = rm -f
+CCC = $(CC)
+
+all: $(OBJ)
+	$(CCC) $(OBJ) $(CFLAGS) -o $(NAME)
+
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	$(RM) *.o
+
+fclean: clean oclean
+
+re: oclean all
