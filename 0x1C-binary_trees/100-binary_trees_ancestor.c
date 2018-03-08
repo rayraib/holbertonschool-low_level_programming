@@ -2,10 +2,10 @@
 binary_tree_t *find_ancestor(const binary_tree_t *first,
 	binary_tree_t *second_parent, binary_tree_t *ancestor);
 /*
-* binary_trees_ancestor - s
-* @first: s
-* @second: s
-* Return: 0
+* binary_trees_ancestor - find the lowest common ancestors 
+* @first: pointer to first node 
+* @second: pointer to second node 
+* Return: pointer to the common ancestor, else NULL 
 */
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	const binary_tree_t *second)
@@ -27,11 +27,11 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	return (NULL);
 }
 /*
-* find_ancestor - s
-* @first: s
-* @second_parent: s
-* @ancestor: sd
-* Return: 0
+* find_ancestor - helper to find the common ancestor 
+* @first: pointer to first node 
+* @second_parent: pointer to second node 
+* @ancestor: first ancestor of second node 
+* Return: lowest common ancestor if found, else NULL 
 */
 binary_tree_t *find_ancestor(const binary_tree_t *first,
 	binary_tree_t *second_parent, binary_tree_t *ancestor)
