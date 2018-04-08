@@ -26,12 +26,11 @@ int find_value(int *array, size_t low, size_t high, int value)
 	size_t pos;
 
 	pos = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]));	
-	printf("POS:----------------------> %lu\n", pos);
+	printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
 	if (array[pos] == value)
 		return (pos);
 	else if (array[pos] > value)
 	{
-		printf("value is smaller\n");
 		x = (find_value(array, (pos + 1), high, value));
 	}
 	else
